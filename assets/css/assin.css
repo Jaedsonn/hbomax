@@ -1,0 +1,261 @@
+@import 'config.css';
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+
+body nav {
+    width: 100%;
+    padding: 12px 22px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: var(--nav-bg-color);
+    position: fixed;
+    z-index: 1;
+    top: 0;
+}
+
+body nav .menu_logo {
+    width: 145px;
+}
+
+body nav .menu_logo img {
+    max-width: 100%;
+}
+
+body nav ul {
+    display: flex;
+    gap: 24px;
+    margin-right: 24px;
+}
+
+
+nav ul li a {
+    color: var(--text-color);
+
+    font-family: "Raleway";
+    font-size: 0.70rem;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+nav ul li:nth-last-of-type(1) a {
+    background-color: var(--tertiary-color);
+
+    padding: 8px 24px;
+
+    border-radius: 22px;
+
+    transition: background .9s, color .9s;
+}
+
+nav ul li:nth-last-of-type(1) a:hover {
+    background-color: var(--btn-link-bg-color);
+    color: var(--btn-link-color);
+}
+
+header {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    width: 100%;
+    padding: 120px 0px;
+    
+
+    background: linear-gradient(-45deg, #56125b, #0f0f10, #271e6e);
+    background-size: 400% 400%;
+
+    animation: header-bg 8s ease-in infinite;
+    animation-fill-mode: forwards;
+
+    transition: background 200ms;
+}
+
+header .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 40px;
+}
+
+header .content .marcas {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+}
+
+
+header .content .title h2 {
+    font-family: "Raleway";
+    font-weight: lighter;
+    font-size: 30px;
+    color: var(--text-color);
+    text-align: center;
+    margin-bottom: 6px;
+}
+
+header .content .title h1 {
+    font-family: "Raleway";
+    font-weight: bold;
+    font-size: 46px;
+    color: var(--text-color);
+    text-align: center;
+}
+
+header .content hr {
+    height: 5px;
+    width: 70%;
+
+    background: var(--divider-bg-color);
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+
+header .content .price {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header .content .price p {
+    color: var(--text-color);
+
+    font-family: "Quicksand";
+    font-size: 20px;
+    text-align: center;
+}
+
+header .content .price p:last-of-type {
+    color: var(--text-color);
+    font-family: "Raleway";
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+}
+
+header .content .price p:last-of-type span {
+    font-size: 16px;
+    font-weight: lighter;
+    text-align: center;
+}
+
+header .content button {
+    width: max-content;
+    padding: 14px 36px;
+
+    border-radius: 30px;
+    border: solid 2px transparent;
+
+    color: var(--text-color);
+    background: var(--btn-bg-color-gradient);
+    background-size: 250%;
+    background-position: 10%;
+
+    font-family: "Raleway";
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 4px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: background 1s, border 1s;
+    animation: toggler 2.2s linear infinite;
+}
+
+header .content button:hover {
+    background-position: 100%;
+    border: solid 2px var(--secondary-color);
+    transition: all 1s;
+}
+
+header .content blockquote {
+    font-size: 15px;
+    font-family: "Quicksand";
+    font-weight: lighter;
+    text-align: center;
+
+    color: var(--text-color);
+
+    line-height: 1.2rem;
+}
+
+@media screen and (max-width:480px) {
+    body nav {
+        flex-direction: column;
+        padding: 31px 24px;
+        gap: 20px;
+    }
+
+    body nav .menu_logo {
+        max-width: 100px;
+    }
+
+    body nav ul {
+        margin-right: 0;
+    }
+}
+
+@keyframes header-bg {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes toggler {
+
+    0%,
+    10% {
+        transform: rotate(0);
+    }
+
+    15% {
+        transform: rotate(-15deg);
+    }
+
+    20% {
+        transform: rotate(10deg);
+    }
+
+    25% {
+        transform: rotate(-10deg);
+    }
+
+    30% {
+        transform: rotate(10deg)
+    }
+
+    35% {
+        transform: rotate(-10deg)
+    }
+
+    40%,
+    100% {
+        transform: rotate(0)
+    }
+}

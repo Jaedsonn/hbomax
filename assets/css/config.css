@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;700&display=swap");
 
 @font-face {
-	font-family:"Relaway" ;
+	font-family:"Raleway," ;
 	src: url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap");
 }
 
@@ -22,9 +22,7 @@
 	--btn-link-bg-color: #fff;
 	--btn-link-color: #000;
 	--card-bg-color: linear-gradient(0deg, transparent, #3b1e63);
-	--divider-bg-color: linear-gradient(90deg,
-			#5516ba,
-			rgba(255, 0, 229, 0.5) 80%);
+	--divider-bg-color: linear-gradient(90deg, #5516ba, rgba(255, 0, 229, 0.5) 80%);
 	--nav-bg-color: rgba(0, 0, 0, 0.3);
 	--text-color: #fff;
 	--link-color: #9e86ff;
@@ -47,6 +45,25 @@
   ::-webkit-scrollbar-thumb:hover {
     background: var(--secondary-color);
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 html,
 body,
@@ -160,6 +177,10 @@ body {
 ol,
 ul {
 	list-style: none;
+}
+
+a{
+	text-decoration: none;
 }
 
 blockquote,
