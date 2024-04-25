@@ -1,28 +1,29 @@
 @import 'config.css';
 
 body {
+    background-color: var(--primary-color);
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    width: 100%;
+    align-items: center;
 }
 
 body nav {
     width: 100%;
-    padding: 12px 22px;
+    padding: 10px 22px;
+    padding-left: 50px;
 
     display: flex;
     justify-content: space-between;
     align-items: center;
-
+    
     background-color: var(--nav-bg-color);
     position: fixed;
-    z-index: 1;
     top: 0;
 }
 
 body nav .menu_logo {
-    width: 145px;
+    width: 160px;
 }
 
 body nav .menu_logo img {
@@ -31,8 +32,11 @@ body nav .menu_logo img {
 
 body nav ul {
     display: flex;
-    gap: 24px;
     margin-right: 24px;
+}
+
+main{
+    width: 100%;
 }
 
 
@@ -40,11 +44,13 @@ nav ul li a {
     color: var(--text-color);
 
     font-family: "Raleway";
-    font-size: 0.70rem;
+    font-size: 12px;
 
     font-weight: bold;
 
     letter-spacing: 2px;
+
+    margin-right: 24px;
 }
 
 nav ul li:nth-last-of-type(1) a {
@@ -63,15 +69,13 @@ nav ul li:nth-last-of-type(1) a:hover {
 }
 
 header {
-    position: relative;
-
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
 
     width: 100%;
-    padding: 120px 0px;
-    
+    padding: 100px 0 300px;
+
 
     background: linear-gradient(-45deg, #56125b, #0f0f10, #271e6e);
     background-size: 400% 400%;
@@ -80,28 +84,32 @@ header {
     animation-fill-mode: forwards;
 
     transition: background 200ms;
+    margin-top: 55px;
 }
 
 header .content {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
     gap: 40px;
+    padding: 0 40px;
+    background: transparent;
 }
 
 header .content .marcas {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
     gap: 24px;
+    width: fit-content;
 }
 
 
 header .content .title h2 {
     font-family: "Raleway";
-    font-weight: lighter;
-    font-size: 30px;
+    font-weight: light;
+    font-size: 2rem;
     color: var(--text-color);
     text-align: center;
     margin-bottom: 6px;
@@ -109,14 +117,15 @@ header .content .title h2 {
 
 header .content .title h1 {
     font-family: "Raleway";
+    font-size: 3rem;
     font-weight: bold;
-    font-size: 46px;
     color: var(--text-color);
     text-align: center;
 }
 
 header .content hr {
     height: 5px;
+    max-width: 700px;
     width: 70%;
 
     background: var(--divider-bg-color);
@@ -131,6 +140,7 @@ header .content .price {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 10px;
 }
 
 header .content .price p {
@@ -157,7 +167,7 @@ header .content .price p:last-of-type span {
 
 header .content button {
     width: max-content;
-    padding: 14px 36px;
+    padding: 16px 40px;
 
     border-radius: 30px;
     border: solid 2px transparent;
@@ -187,7 +197,7 @@ header .content button:hover {
 }
 
 header .content blockquote {
-    font-size: 15px;
+    font-size: 16px;
     font-family: "Quicksand";
     font-weight: lighter;
     text-align: center;
@@ -198,10 +208,13 @@ header .content blockquote {
 }
 
 @media screen and (max-width:480px) {
+ 
+
     body nav {
         flex-direction: column;
-        padding: 31px 24px;
-        gap: 20px;
+        align-items: center;
+        padding: 32px 24px;
+        gap: 28px;
     }
 
     body nav .menu_logo {
@@ -210,7 +223,37 @@ header .content blockquote {
 
     body nav ul {
         margin-right: 0;
+        gap: 24px;
     }
+
+    nav ul li a {
+        color: var(--text-color);
+    
+        font-family: "Raleway";
+        font-size: 12px;
+    
+        font-weight: bold;
+    
+        letter-spacing: 2px;
+        margin: 0;
+    }
+}
+
+@media  screen and (max-width:528px) {
+    header{
+        margin-top:    130px;
+        padding-top:100px ;
+    }
+
+    header .content .title h2 {
+        margin-bottom: 0px;
+        line-height: 2.4rem;
+    }
+
+    header .content .title h1{
+        line-height: 3.6rem;
+    }
+    
 }
 
 @keyframes header-bg {
