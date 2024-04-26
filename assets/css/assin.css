@@ -368,32 +368,27 @@ header::after {
 
 .movies {
     display: flex;
-    justify-content: flex-start;
     flex-direction: column;
-    align-items: center;
-    margin: 200px 164px;
+    max-width: 1200px;
+    padding: 24px;
+    text-align: center;
+    margin: 100px auto;
 }
 
 .movies h1 {
-    font-family: "Raleway";
     font-size: 32px;
+    font-family: 'Raleway';
     color: var(--text-color);
-    margin-bottom: 40px;
 }
 
 .movies .movies_container {
-    padding: 24px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 40px;
-    margin: auto;
-    width: 100%;
 }
 
-.movies .movies_container li {
-    width: 350px;
+.movies .movies_container .movie-card {
     position: relative;
     overflow: hidden;
     transition: all .8s;
@@ -402,35 +397,34 @@ header::after {
     transition: transform 0.8s, background 0.8s, border 1s;
 }
 
-.movies .movies_container li .img-default {
+.movies .movies_container .movie-card .img-default {
     z-index: 1;
     transition: all .8s;
 }
 
-.movies .movies_container li .img-hover {
+.movies .movies_container .movie-card .img-hover {
     position: absolute;
     transition: all .8s;
     left: 0px;
     z-index: -1;
 }
 
-.movies .movies_container li img {
+.movies .movies_container .movie-card img {
     width: 100%;
     object-fit: cover;
     transition: all .8s;
 }
 
-.movies .movies_container li:hover>.img-default {
+.movies .movies_container .movie-card:hover>.img-default {
     transition: all .8s;
     opacity: 0;
     transform: scale(1.05);
 }
 
-.movies .movies_container li:hover {
+.movies .movies_container .movie-card:hover {
     transform: scale(1.05);
     border: solid 2px black;
 }
-
 
 
 @media screen and (max-width:1140px) {
@@ -446,6 +440,12 @@ header::after {
     .planos .card-container .card {
         max-width: 600px;
         padding: 40px;
+    }
+}
+
+@media screen and (max-width:800px){
+    .movies .movies_container{
+       grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -514,6 +514,13 @@ header::after {
     .planos .card-container .price p:last-of-type {
         font-size: 24px;
     }
+
+    .movies .movies_container{
+        grid-template-columns:repeat(6, 100%);
+        position: relative;
+        overflow-x: scroll;
+        overflow-y: hidden;
+     }
 }
 
 @keyframes header-bg {
