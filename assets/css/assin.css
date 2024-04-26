@@ -478,7 +478,6 @@ footer .social img{
 
 footer .social img:hover{ 
     transform: translateY(-15px) scale(1.02);
-    /* transform:; */
     transition: transform 500ms;
 }
 
