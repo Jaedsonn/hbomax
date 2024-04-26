@@ -209,14 +209,14 @@ header .content blockquote {
     line-height: 1.2rem;
 }
 
-.line-between{
-    background:linear-gradient(0deg, var(--primary-color), transparent);
+.line-between {
+    background: linear-gradient(0deg, var(--primary-color), transparent);
     height: 300px;
     content: "";
     width: 100%;
     height: 250px;
     position: absolute;
-    bottom: -300px;
+    bottom: -280px;
 }
 
 .planos {
@@ -242,7 +242,8 @@ header .content blockquote {
 .planos .card-container {
     display: flex;
     justify-content: center;
-    gap:80px;
+    gap: 80px;
+    perspective: 1000px;
 }
 
 .planos .card-container .card {
@@ -250,15 +251,29 @@ header .content blockquote {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    padding:30px 60px;
-    background:var(--card-bg-color);
+    padding: 30px 60px;
+    background: var(--card-bg-color);
     background-size: 200% 110%;
     border-radius: 8px;
     min-height: 500px;
-    gap:30px;
+    gap: 30px;
+    transition: transform 1s;
 }
 
-.planos .card-container .separar{
+.card-container:has(.card:nth-child(1):hover)
+  .card:nth-child(2) {
+  transform: rotateY(-45deg);
+}
+
+.card-container:has(.card:nth-child(2):hover)
+  .card:nth-child(1) {
+  transform: rotateY(45deg);
+}
+/*ESTUDAR ESSA SOLUÇÃO POR QUE PRR*/
+
+
+
+.planos .card-container .separar {
     display: flex;
     flex-direction: column;
     align-items: center;
