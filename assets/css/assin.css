@@ -86,6 +86,8 @@ header {
 
     transition: background 200ms;
     margin-top: 50px;
+
+    position: relative;
 }
 
 header .content {
@@ -104,9 +106,14 @@ header .content .marcas {
     flex-wrap: wrap;
     gap: 24px;
     width: fit-content;
-    height: 58px;
+    height: auto;
 }
 
+header .content .title {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
 
 header .content .title h2 {
     font-family: "Raleway";
@@ -209,25 +216,25 @@ header .content blockquote {
     line-height: 1.2rem;
 }
 
-.line-between {
-    background: linear-gradient(0deg, var(--primary-color), transparent);
-    height: 300px;
-    content: "";
+header::after {
     width: 100%;
     height: 250px;
     position: absolute;
-    bottom: -280px;
+    bottom: 0;
+    background: linear-gradient(0deg, var(--primary-color), transparent);
+    content: "";
 }
 
-.planos {
+.planos{
+
     display: flex;
     flex-direction: column;
     gap: 45px;
-    margin: auto;
+    align-items: center;
+    justify-content: flex-start;
     padding: 20px 100px;
     background: url(../images/background-movies-series.png) no-repeat;
     background-size: cover;
-    position: relative;
 }
 
 .planos h1 {
@@ -241,9 +248,10 @@ header .content blockquote {
 
 .planos .card-container {
     display: flex;
-    justify-content: center;
     gap: 80px;
     perspective: 1000px;
+    width: fit-content;
+    align-items: center;
 }
 
 .planos .card-container .card {
@@ -255,20 +263,19 @@ header .content blockquote {
     background: var(--card-bg-color);
     background-size: 200% 110%;
     border-radius: 8px;
-    min-height: 500px;
+    min-height: 600px;
     gap: 30px;
-    transition: transform 1s;
+    transition: transform 1.5s;
 }
 
-.card-container:has(.card:nth-child(1):hover)
-  .card:nth-child(2) {
-  transform: rotateY(-45deg);
+.card-container:has(.card:nth-child(1):hover) .card:nth-child(2) {
+    transform: rotateY(-45deg);
 }
 
-.card-container:has(.card:nth-child(2):hover)
-  .card:nth-child(1) {
-  transform: rotateY(45deg);
+.card-container:has(.card:nth-child(2):hover) .card:nth-child(1) {
+    transform: rotateY(45deg);
 }
+
 /*ESTUDAR ESSA SOLUÇÃO POR QUE PRR*/
 
 
@@ -285,13 +292,14 @@ header .content blockquote {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
     gap: 10px;
     width: 100%;
 }
 
 .planos .card-container .price p {
     color: var(--text-color);
-
+    width: 100%;
     font-family: "Raleway";
     font-size: 23px;
     text-align: center;
@@ -348,15 +356,48 @@ header .content blockquote {
     background: var(--btn-bg-color-gradient);
     background-size: 250%;
     letter-spacing: 3px;
-    transition: background 1s, border 1s;
+    transition: scale 1s, border 1s;
 }
 
 .planos .card-container .card button:hover {
     background-position: 100%;
+    scale: 1.05;
     border: solid 2px var(--secondary-color);
     transition: all 1s;
 }
 
+@media screen and (max-width:1140px) {
+    .planos {
+        padding: 0px 24px;
+    }
+
+    .planos .card-container {
+        flex-direction: column;
+        padding: 0px 0px;
+    }
+
+    .planos .card-container .card {
+        max-width: 600px;
+        padding: 40px;
+    }
+}
+
+@media screen and (max-width:528px) {
+    header {
+        margin-top: 130px;
+        padding-top: 100px;
+    }
+
+    header .content .title h2 {
+        margin-bottom: 0px;
+        line-height: 2.4rem;
+    }
+
+    header .content .title h1 {
+        line-height: 3.6rem;
+    }
+
+}
 
 @media screen and (max-width:480px) {
 
@@ -388,23 +429,24 @@ header .content blockquote {
         letter-spacing: 2px;
         margin: 0;
     }
-}
 
-@media screen and (max-width:528px) {
-    header {
-        margin-top: 130px;
-        padding-top: 100px;
+    .planos .card-container .beneficios li {
+        font-size: 16px;
     }
 
-    header .content .title h2 {
-        margin-bottom: 0px;
-        line-height: 2.4rem;
+    .planos .card-container .card {
+        gap: 40px;
     }
 
-    header .content .title h1 {
-        line-height: 3.6rem;
+    .planos .card-container .card button {
+        padding: 16px 40px;
+        font-size: 13px;
+        border-radius: 40px;
     }
 
+    .planos .card-container .price p:last-of-type {
+        font-size: 24px;
+    }
 }
 
 @keyframes header-bg {
