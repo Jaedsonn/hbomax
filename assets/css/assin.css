@@ -6,6 +6,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow-x: hidden;
 }
 
 body nav {
@@ -426,6 +427,61 @@ header::after {
     border: solid 2px black;
 }
 
+footer{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+   align-items: center;
+    justify-content: space-between;
+    padding: 24px;
+}
+
+footer .actions{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap:30px;
+}
+
+footer .actions li{
+    font-size: 14px;
+    font-family: "Raleway";
+    color: var(--link-color);
+    font-weight: bold;
+    transition: color .8s;
+}
+
+footer .actions li:hover{
+    color: var(--text-color);
+}
+
+footer p{
+    font-size: 12px;
+    font-family: "Quicksand";
+    font-weight: lighter;
+    color: var(--link-color);
+    margin: 16px 0;
+    text-align: center;
+}
+
+footer .social{
+    display: flex;
+    gap: 40px;
+    margin-top:80px;
+    padding-bottom: 24px;
+}
+
+footer .social img{ 
+    transition: transform 500ms;
+}
+
+footer .social img:hover{ 
+    transform: translateY(-15px) scale(1.02);
+    /* transform:; */
+    transition: transform 500ms;
+}
+
 
 @media screen and (max-width:1140px) {
     .planos {
@@ -521,6 +577,22 @@ header::after {
         overflow-x: scroll;
         overflow-y: hidden;
      }
+
+     .movies .movies_container .movie-card:hover>.img-default {
+        transition: all .8s;
+        opacity: 0;
+        transform: scale(1);
+    }
+    
+    .movies .movies_container .movie-card:hover {
+        transform: scale(1);
+        border: solid 2px black;
+    }
+
+    footer .actions{
+        flex-direction: column;
+        gap: 20px;
+    }
 }
 
 @keyframes header-bg {
