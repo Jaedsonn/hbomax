@@ -237,6 +237,7 @@ footer .social img:hover {
         align-items: center;
         padding: 32px 24px;
         gap: 28px;
+        width: auto; /*change*/
     }
 
     body nav .menu_logo {
@@ -258,6 +259,10 @@ footer .social img:hover {
 
         letter-spacing: 2px;
         margin: 0;
+    }
+
+    main{
+        padding: 24px;
     }
 
     footer .actions {
